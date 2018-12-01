@@ -1,3 +1,21 @@
+<?php
+   $conexion = mysqli_connect("localhost", "root", "", "proyectutn");
+   /*if (!$conexion) {
+       echo 'Error al conectar a la base de datos';
+   }else{
+       echo 'conectado a la base de datos';
+   }*/
+   $nombre = $_POST["nombre"];
+   $apellido = $_POST["apellido"];
+   $correo = $_POST["correo"];
+   $telefono = $_POST["telefono"];
+   $mensaje = $_POST["mensajes"];
+   //////////
+
+//consulta para insertar
+   $insertar = "INSERT INTO datos (nombre, apellido, correo, telefono, mensaje) VALUES ('$nombre', '$apellido', '$correo', '$telefono', '$mensaje')";
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +26,6 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
-    <script src="validar.js"></script>
 </head>
 <body>
     <div class="padre">
@@ -36,18 +53,31 @@
                     <div><a href="#"><i class="fab fa-facebook-square"></i></a></div>
                     <div><a href="#"><i class="fab fa-instagram"></i></a></div>
                 </div>
+           
             </div>
-            <div class="texto-principal">
-                <form action="phpindex.php" method="POST" onsubmit="return validar();">
-                    <h2>contacto</h2>
-                        <p>Nombre:</p><input type="text"id=nombre name="nombre" placeholder="Nombre" >
-                        <p>Apellido:</p><input type="text"id=apellido name="apellido" placeholder="Apellido" >
-                        <p>Correo:</p><input type="text"id=correo name="correo" placeholder="Correo" >
-                        <p>Telefono:</p><input type="text"id=telefono name="telefono" placeholder="Telefono" >
-                        <p>Mensaje:</p><textarea id=mensajes name="mensajes" placeholder="Escriba aqui su mensaje..."></textarea>
-                        <input type="submit" value="Enviar" id="boton">
-                </form>
-            </div>
+            
+            <?php
+    if ($nombre=='' || $apellido=='' || $correo=='' || $telefono=='' || $mensaje==''){
+        echo '<div class="texto-principal">
+        <h1>Tenes que comletar todos los campos.</h1>
+        </div>';
+        exit(); 
+        }
+
+                //ejecutar consulta
+   $resultado = mysqli_query($conexion, $insertar);
+   if (!$resultado) {
+       echo '<div class="texto-principal">
+       <h1>error al registrar</h1>
+       </div>';
+   }else{
+       echo '<div class="texto-principal">
+       <h1>Datos registrados exitosamente</h1>
+   </div> ';
+   //cerrar conexion
+   mysqli_close($conexion);
+   }
+?>
         </header>
     </div>
         <footer class="footer interno">
@@ -56,6 +86,7 @@
             </nav>
         </footer>
     </div>
+    
     
 </body>
    
