@@ -10,7 +10,18 @@
    $correo = $_POST["correo"];
    $telefono = $_POST["telefono"];
    $mensaje = $_POST["mensajes"];
-   //////////
+
+
+   ///////Envio de correo///////////////////////////////////////////////////////////////////
+/*
+
+   $destino = "nelsonaibarra@hotmail.com";
+   $contenido = "Nombre:" . $nombre . "\nCorreo:" .$correo. "\nTelefono:" . $telefono. "\Mensaje:" . $mensaje;
+
+   mail($destino,"contacto", $contenido);*/
+
+
+   //////////////////////////////////////////////////////////
 
 //consulta para insertar
    $insertar = "INSERT INTO datos (nombre, apellido, correo, telefono, mensaje) VALUES ('$nombre', '$apellido', '$correo', '$telefono', '$mensaje')";
