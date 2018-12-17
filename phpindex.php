@@ -57,7 +57,7 @@
                 <nav class="nav">
                         <a href="index.html"><i class="fas fa-home"></i><span class="off">inicio</span></a>
                         <a href="diseños.html"><i class="fas fa-comments"></i><span class="off">Diseños</span></a>
-                        <a href="contacto.html"><i class="fas fa-user-tie"></i><span class="off">Nosotros</span></a>
+                        <a href="login.html"><i class="fas fa-user-tie"></i><span class="off">Ingresar</span></a>
                         <a href="contacto.html"><i class="fas fa-envelope"></i><span class="off">Contacto</span></a>
                 </nav>
                 <div class="social">
