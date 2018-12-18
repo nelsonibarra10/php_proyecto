@@ -54,8 +54,10 @@ if (!isset($_SESSION["username"])) {
 		<div class="texto-principal">
                 <form action="carga.php" method="POST" enctype="multipart/form-data">
                     <h2>Cargar archivos</h2>
-                        <p>Nombre de Articulo:</p><input type="text"id=nombre name="producto" placeholder="articulo"
+                        <p>Nombre de Articulo:</p><input type="text"id=nombre name="producto" placeholder="articulo">
+                        <p>Fecha de subida:</p><input type="text"id=apellido name="fecha" placeholder="fecha">
                         <p>imagen</p><input type="file"id=correo name="imagen" accept="image/*">
+                        <p>Mensaje:</p><textarea id=mensajes name="descripcion" placeholder="Escriba aqui la descripcion del articulo..."></textarea>
                         <input type="submit" value="Subir" id="boton">
                 </form>
             </div>
