@@ -29,76 +29,86 @@ if (!isset($_SESSION["username"])) {
 
     </div>
     <div class="padre">
-        <header class="header">
-            <div class="menu interno">
-                <div class="logo">
-                    <a href="index.html">
-                    <img src="imagenes/logo.png" alt=""></a>
+            <header class="header">
+                <div class="menu interno">
+                    <div class="logo">
+                        <a href="index.html">
+                        <img src="imagenes/logo.png" alt=""></a>
+                    </div>
+                    <nav class="nav">
+                            <a href="index.html"><i class="fas fa-home"></i><span class="off">inicio</span></a>
+                            <a href="diseños.html"><i class="fas fa-comments"></i><span class="off">Diseños</span></a>
+                            <a href="login.html"><i class="fas fa-user-tie"></i><span class="off">Ingresar</span></a>
+                            <a href="contacto.html"><i class="fas fa-envelope"></i><span class="off">Contacto</span></a>
+                    </nav>
+                    <div class="social">
+                        <div><a href="http://www.facebook.com/Acrinel/"><i class="fab fa-facebook-square"></i></a></div>
+                        <div><a href="#"><i class="fab fa-instagram"></i></a></div>
+                    </div>
                 </div>
-                <nav class="nav">
-                        <a href="index.html"><i class="fas fa-home"></i><span class="off">inicio</span></a>
-                        <a href="diseños.html"><i class="fas fa-comments"></i><span class="off">Diseños</span></a>
-                        <a href="login.html"><i class="fas fa-user-tie"></i><span class="off">Ingresar</span></a>
-                        <a href="contacto.html"><i class="fas fa-envelope"></i><span class="off">Contacto</span></a>
-                </nav>
-                <div class="social">
-                    <div><a href="http://www.facebook.com/Acrinel/"><i class="fab fa-facebook-square"></i></a></div>
-                    <div><a href="#"><i class="fab fa-instagram"></i></a></div>
+                <div class="texto-principal">
+                    <h1>Bienvenido!!!</h1>
+                    <a id="boton" href="logout.php">Salir del sistema</a>
                 </div>
-            </div>
-            <div class="texto-principal">
-                <h1>Bienvenido!!!</h1>
-				<a id="boton" href="logout.php">Salir del sistema</a>
-            </div>
-		</header>
-		<div class="texto-principal">
-                <form action="carga.php" method="POST" enctype="multipart/form-data">
-                    <h2>Cargar archivos</h2>
-                        <p>Nombre de Articulo:</p><input type="text"id=nombre name="producto" placeholder="articulo">
-                        <p>Fecha de subida:</p><input type="text"id=apellido name="fecha" placeholder="fecha">
-                        <p>imagen</p><input type="file"id=correo name="imagen" accept="image/*">
-                        <p>Mensaje:</p><textarea id=mensajes name="descripcion" placeholder="Escriba aqui la descripcion del articulo..."></textarea>
-                        <input type="submit" value="Subir" id="boton">
-                </form>
-            </div>
+            </header>
+                <div class="texto-principal">
+                        <form action="carga.php" method="POST" enctype="multipart/form-data">
+                            <h2>Cargar archivos</h2>
+                                <p>Nombre de Articulo:</p><input type="text"id=nombre name="producto" placeholder="articulo">
+                                <p>Fecha de subida:</p><input type="text"id=apellido name="fecha" placeholder="fecha">
+                                <p>imagen</p><input type="file"id=correo name="imagen" accept="image/*">
+                                <p>Mensaje:</p><textarea id=mensajes name="descripcion" placeholder="Escriba aqui la descripcion del articulo..."></textarea>
+                                <input type="submit" value="Subir" id="boton">
+                        </form>
+                </div>
             <?php
 
-$conexion = mysqli_connect("localhost", "root", "", "proyectutn");
-$consulta = mysqli_query($conexion, "select * from archivo");
+                $conexion = mysqli_connect("localhost", "root", "", "proyectutn");
+                $consulta = mysqli_query($conexion, "select * from archivo");
 
-while ($unRegistro = mysqli_fetch_array($consulta)) {
-	/*echo "<tr>";
-	echo "<td>$unRegistro[producto]</td>";
-	echo "<td>$unRegistro[fecha]</td>";
-    echo "<td>$unRegistro[imagen]</td>";
-    echo "<td>$unRegistro[descripcion]</td>";
-	echo "</tr>";*/
-
-
+                 while ($unRegistro = mysqli_fetch_array($consulta)) {
+                    /*echo "<tr>";
+                    echo "<td>$unRegistro[producto]</td>";
+                    echo "<td>$unRegistro[fecha]</td>";
+                    echo "<td>$unRegistro[imagen]</td>";
+                    echo "<td>$unRegistro[descripcion]</td>";
+                    echo "</tr>";*/
 
 
-		echo "<section class='section interno'>
-                <div class='articulos'>
-                <article class='article'><img src='imagenes/$unRegistro[imagen]' alt=''>
-                <h3>$unRegistro[fecha]</h3>
-                <h2>$unRegistro[producto]</h2>
-                <p>$unRegistro[descripcion]</p>
-                <a href='diseños.html'>Leer más...</a>
-				</article>
-			</div>	
-		</section>";}
+
+
+                    echo "
+                            <section class='section interno'>
+                            <div class='articulos'>
+                            <article class='article'><img src='imagenes/$unRegistro[imagen]' alt=''>
+                            <h3>$unRegistro[fecha]</h3>
+                            <h2>$unRegistro[producto]</h2>
+                            <p>$unRegistro[descripcion]</p>
+                            <a href='diseños.html'>Leer más...</a>
+                            </article>
+                            
+                        </div>	
+                    </section>";}
+                     echo "    <nav class='navegacion'>
+                            <a href='#'>Inicio</a>
+                            <a href='#'>1</a>
+                            <a href='#'>2</a>
+                            <a href='#'>3</a>
+                            <a href='#'>4</a>
+                            <a href='#'>Final</a>
+                        </nav>";
 	
 
-?>
+            ?>
 			
-		</div>
-		</div>
-        	<footer class="footer interno">
-            	<nav class="pie">
-                	<a href="index.html">Acrilicos, Vinilos Adhesivos.</a>
-           		</nav>
-        	</footer>
-    </div>	
+	            </div>
+		    
+                    <footer class="footer interno">
+                        <nav class="pie">
+                            <a href="index.html">Acrilicos, Vinilos Adhesivos.</a>
+                        </nav>
+                    </footer>
+    	
     </body>
 
 </html>
