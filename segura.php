@@ -61,16 +61,35 @@ if (!isset($_SESSION["username"])) {
                         <input type="submit" value="Subir" id="boton">
                 </form>
             </div>
-		<section class="section interno">
-            <div class="articulos">
-                <article class="article"><img src="imagenes/3.jpg" alt="">
-                <h3>12 de octubre de 2018</h3>
-                <h2>grabado de copas..</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt iure enim a eligendi, aspernatur atque accusamus saepe soluta numquam impedit eius excepturi aliquam ipsum asperiores.</p>
-                <a href="diseños.html">Leer más...</a>
+            <?php
+
+$conexion = mysqli_connect("localhost", "root", "", "proyectutn");
+$consulta = mysqli_query($conexion, "select * from archivo");
+
+while ($unRegistro = mysqli_fetch_array($consulta)) {
+	/*echo "<tr>";
+	echo "<td>$unRegistro[producto]</td>";
+	echo "<td>$unRegistro[fecha]</td>";
+    echo "<td>$unRegistro[imagen]</td>";
+    echo "<td>$unRegistro[descripcion]</td>";
+	echo "</tr>";*/
+
+
+
+
+		echo "<section class='section interno'>
+                <div class='articulos'>
+                <article class='article'><img src='imagenes/$unRegistro[imagen]' alt=''>
+                <h3>$unRegistro[fecha]</h3>
+                <h2>$unRegistro[producto]</h2>
+                <p>$unRegistro[descripcion]</p>
+                <a href='diseños.html'>Leer más...</a>
 				</article>
 			</div>	
-		</section>
+		</section>";}
+	
+
+?>
 			
 		</div>
 		</div>
@@ -80,5 +99,6 @@ if (!isset($_SESSION["username"])) {
            		</nav>
         	</footer>
     </div>	
-	</body>
+    </body>
+
 </html>
