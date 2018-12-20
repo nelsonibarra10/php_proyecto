@@ -1,5 +1,8 @@
 <?php
 
+/*<?php include("articulos.php");?>*/
+
+
 $conexion = mysqli_connect("localhost", "root", "", "proyectutn");
 $consulta = mysqli_query($conexion, "select * from archivo");
 

@@ -344,9 +344,11 @@ a{
                     width: 100%;
                     transition: 200ms;
                     z-index: -100;
-                   
-                    
-                }
+                    -webkit-transition: 200ms;
+                    -moz-transition: 200ms;
+                    -ms-transition: 200ms;
+                    -o-transition: 200ms;
+}
                     .article img:hover{
                     -webkit-transform:scale(1.04);transform:scale(1.04);
                 }   
