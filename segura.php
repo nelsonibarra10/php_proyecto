@@ -59,7 +59,7 @@ if (!isset($_SESSION["username"])) {
                                 <p>imagen</p><input type="file"id=correo name="imagen" accept="image/*">
                                 <p>Mensaje:</p><textarea id=mensajes name="descripcion" placeholder="Escriba aqui la descripcion del articulo..."></textarea>
                                 <input type="submit" value="Subir" id="boton">
-                            <h2 >Abajo..<br><i class="far fa-hand-point-down"></i></h2>
+                            <h2 >Abajo..</h2>
                         </form>
                 </div>
             <?php
@@ -68,15 +68,7 @@ if (!isset($_SESSION["username"])) {
                 $consulta = mysqli_query($conexion, "select * from archivo");
 
                  while ($unRegistro = mysqli_fetch_array($consulta)) {
-                    /*echo "<tr>";
-                    echo "<td>$unRegistro[producto]</td>";
-                    echo "<td>$unRegistro[fecha]</td>";
-                    echo "<td>$unRegistro[imagen]</td>";
-                    echo "<td>$unRegistro[descripcion]</td>";
-                    echo "</tr>";*/
-
-
-
+                   
 
                     echo "
                             <section class='section2 interno'>
