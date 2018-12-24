@@ -363,6 +363,66 @@ a{
                 .article a:hover{
                     background: #546cc3;
                 }
+
+                /*PHP///////////////////////////////////////////////////////////////////////////////*/
+
+
+                .section2{
+                    background: #f7f7f7;
+            
+                    /*flex*/
+                    display: flex;
+                }
+                    .articulos2{
+                        background: #f7f7f7;
+            
+                        /*flex*/
+                        display: flex;
+                        flex: 2 1 auto;
+                        flex-flow: row wrap;
+                        width: 100%;
+                    }
+                        .article2{
+                            /*background: #1f6cb0;*/
+                            /*flex: 1 1 40%;*/
+                            color: #444;
+                            font-size: 0.8125rem;
+                            letter-spacing: 1px;
+                            margin-top: 0.625rem;
+                            margin-right: 0.625rem;
+                            flex: 1 1 45%;
+                            background: #ececec;
+                            overflow:hidden; /*as*/
+                        }
+                            .article2 img{
+                                width: 100%;
+                                transition: 200ms;
+                                z-index: -100;
+                                -webkit-transition: 200ms;
+                                -moz-transition: 200ms;
+                                -ms-transition: 200ms;
+                                -o-transition: 200ms;
+                        }
+                                .article2 img:hover{
+                                -webkit-transform:scale(1.04);transform:scale(1.04);
+                            }   
+                            .article2 a{
+                                color: #fff;
+                                font-size: 0.8125rem;
+                                padding: 0.625rem 0.625rem;
+                                background: #000;
+                                margin: 0.625rem 0;
+                                display: inline-block;
+                            }
+                            .article2 a:hover{
+                                background: #546cc3;
+                            }
+
+                    /*PHP///////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
                 h3{
                     color: #fff;
                     font-size: 0.8125rem;

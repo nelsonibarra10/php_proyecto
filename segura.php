@@ -59,6 +59,7 @@ if (!isset($_SESSION["username"])) {
                                 <p>imagen</p><input type="file"id=correo name="imagen" accept="image/*">
                                 <p>Mensaje:</p><textarea id=mensajes name="descripcion" placeholder="Escriba aqui la descripcion del articulo..."></textarea>
                                 <input type="submit" value="Subir" id="boton">
+                            <h2 >Abajo..<br><i class="far fa-hand-point-down"></i></h2>
                         </form>
                 </div>
             <?php
@@ -78,9 +79,9 @@ if (!isset($_SESSION["username"])) {
 
 
                     echo "
-                            <section class='section interno'>
-                            <div class='articulos'>
-                            <article class='article'><img src='imagenes/$unRegistro[imagen]' alt=''>
+                            <section class='section2 interno'>
+                            <div class='articulos2'>
+                            <article class='article2'><img src='imagenes/$unRegistro[imagen]' alt=''>
                             <h3>$unRegistro[fecha]</h3>
                             <h2>$unRegistro[producto]</h2>
                             <p>$unRegistro[descripcion]</p>
