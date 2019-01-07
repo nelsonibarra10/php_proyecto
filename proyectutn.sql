@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2018 a las 03:42:00
+-- Tiempo de generación: 24-12-2018 a las 22:25:01
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -41,8 +41,8 @@ CREATE TABLE `archivo` (
 --
 
 INSERT INTO `archivo` (`id`, `producto`, `imagen`, `fecha`, `descripcion`) VALUES
-(1, 'sfdfd', 'cap.jpg', '', ''),
-(2, 'asdsd', 'medida chica.jpg', '12/12/2018', 'trofeo de souvenirs');
+(4, 'Muestras acrilico', 'Acrilico-Laminado.jpg', '22 de diciembre 2018', 'laminado de acrÃ­lico'),
+(5, 'Escalera', 'escalera.jpg', '22 de diciembre 2018', 'escalera acrÃ­lico..');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,8 @@ INSERT INTO `datos` (`id`, `nombre`, `apellido`, `correo`, `telefono`, `mensaje`
 (12, 'Ariel ', 'ibarra', 'ari@gmail.com', 44567566, 'si'),
 (15, 'nel', 'ibarra', 'bbbb@hotmail.com', 44535353, 'dsfsdfsdf'),
 (16, 'nels', 'arisis', 'nelson@hotmail.com', 33344423, 'hola'),
-(17, 'ari', 'iba', 'nelnaik10@gmail.com', 1141989537, 'hasta');
+(17, 'ari', 'iba', 'nelnaik10@gmail.com', 1141989537, 'hasta'),
+(18, 'ariel', 'ibarra', 'nelnaik10@gmail.com', 1141989537, 'hola');
 
 -- --------------------------------------------------------
 
@@ -119,13 +120,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `archivo`
 --
 ALTER TABLE `archivo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
