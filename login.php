@@ -3,7 +3,7 @@ session_start();
 
 function validarUsuario($username, $password) {
 	$conexion = mysqli_connect("localhost", "root", "", "proyectutn");
-	//select * from usuario where username='admin' and password='admin4322'
+	//select * from usuario where username='admin' and password='admin1234'
 	$password2 =($password);
 	$query = "select * from usuario where username='$username' and password='$password2'";
 	
